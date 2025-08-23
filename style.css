@@ -1,0 +1,181 @@
+@font-face {
+  font-family: 'TT Lakes';
+  src: url('./fonts/TTLakes.zip-Regular.woff2') format('woff2'),
+       url('./fonts/TTLakes.zip-Regular.woff') format('woff'),
+       url('./fonts/TTLakes.zip-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+  body {
+  font-family: Arial, sans-serif;
+  padding: 5px;
+  background: #f8f8f8;
+}
+
+.brands {
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.brands__title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #7a7a7a;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+/* Swiper */
+.swiper {
+  width: 100%;
+  position: relative; /* важно для absolute пагинации */
+  padding-bottom: 24px; /* место для точек */
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  width: 240px; /* мобильная ширина слайдов */
+  padding: 12px 16px;
+  font-size: 18px;
+}
+.brand-card {
+  width: 80px;              /* фиксированная ширина карточки */
+  height: 40px;             /* контейнер под лого */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-card img {
+  max-width: 100%;          /* логотип не выйдет за пределы карточки */
+  max-height: 32px;         /* фиксированная высота */
+  object-fit: contain;      /* сохраняем пропорции */
+  display: block;
+  margin: 0 auto;
+}
+.brand-card button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ff004d;
+  border-radius: 50%;
+  background: none;
+  color: #ff004d;
+  cursor: pointer;
+}
+
+.brand-card button:hover {
+  background: #ff3366;
+  color: #fff;
+}
+
+/* Пагинация */
+.swiper-pagination {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #9b9898;
+  display: inline-block;
+  margin: 0 4px;
+}
+
+.swiper-pagination-bullet-active {
+  background: #666565;
+}
+  @media (min-width: 320px) and (max-width: 767px){
+/* Общий стиль слайдера */
+
+.brands {
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.brands__title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #7a7a7a;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.swiper {
+  width: 100%;
+  position: relative;
+  padding-bottom: 24px; /* место для пагинации */
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 320px; /* фиксированная ширина для 320px */
+  padding: 12px 16px;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+
+.brand-card img {
+  height: auto; /* уменьшаем высоту, чтобы лого помещалось */
+  max-width: 100%;  /* чтобы не вылезало по ширине */
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;    /* центрируем внутри карточки */
+  }
+
+.brand-card button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #ff004d;
+  border-radius: 50%;
+  background: none;
+  color: #ff004d;
+  cursor: pointer;
+}
+
+.brand-card button:hover {
+  background: #ff3366;
+  color: #fff;
+}
+
+/* Пагинация */
+.swiper-pagination {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #9b9898;
+  display: inline-block;
+  margin: 0 4px;
+}
+
+.swiper-pagination-bullet-active {
+  background: #666565;
+}
+  }
