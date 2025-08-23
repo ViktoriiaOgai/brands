@@ -11,3 +11,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   console.log('Bullets:', document.querySelectorAll('.swiper-pagination-bullet'));
 });
+let swiper;
+
+function initSwiper() {
+  if (window.innerWidth < 768) {
+    if (!swiper) {
+      swiper = new Swiper('.brands__slider', {
+        slidesPerView: 'auto',
+        spaceBetween: 16,
+      });
+    }
+  } else {
+    if (swiper) {
+      swiper.destroy(true, true);
+      swiper = null;
+    }
+  }
+}
+
+window.addEventListener('resize', initSwiper);
+window.addEventListener('load', initSwiper);
