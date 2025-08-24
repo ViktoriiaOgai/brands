@@ -18,7 +18,7 @@
 }
 
 @media (min-width: 320px) and (max-width: 767px){
- 
+ .brands__tab { display: none;}
 .brands {
   max-width: 320px;
   margin: 0 auto;
@@ -103,9 +103,81 @@
   display: block;
   margin: 0 auto;
 }
-
+}
 
 @media (min-width: 768px) and (max-width: 1119px) {
-
+  .brands {display: none;}
+  .brands__tab {
+  max-width: 768px;
+  margin: 0 auto;
+  display: block;
 }
+.swiper-wrapper {
+    display: contents; /* отключаем слайдер, используем только сетку */
+    transform: none;
+  }
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 768px; /* фиксированная ширина для 768px */
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+.brands__listt {
+  margin-top: 20px;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 в ряд */
+  grid-template-rows: repeat(2, auto);   /* 2 ряда */
+  gap: 16px;
+}
+.brands__title {
+  margin-top: 20px;
+  padding: 0 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #7a7a7a;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.brand-cardt button {
+  width: 32px;
+  height: 32px;
+  margin-left: 8px;
+  border: 1px solid #ff004d;
+  border-radius: 50%;
+  background: none;
+  color: #ff004d;
+  cursor: pointer;
+}
+
+.brand-cardt button:hover {
+  background: #ff3366;
+  color: #fff;
+}
+
+.brand-cardt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border: 2px solid #ddd;   
+  border-radius: 12px;
+  background-color: #fff;
+  width: 230px;              /* фиксированная ширина для всех карточек */
+  box-sizing: border-box;    /* чтобы padding и border не увеличивали ширину */
+}
+
+.brand-cardt img {
+  height: 32px;              
+  width: auto;       
+  object-fit: contain;      /* пропорции */
+  
+}
+.brands__listt .brand-cardt:nth-child(n+7) {
+    display: none !important;
+  }
 }

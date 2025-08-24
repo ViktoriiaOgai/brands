@@ -23,7 +23,7 @@ function initSwiper() {
     }
   } else {
     if (swiper) {
-      swiper.destroy(true, true);
+      swiper.destroy(false, true);
       swiper = null;
     }
   }
@@ -31,3 +31,4 @@ function initSwiper() {
 
 window.addEventListener('resize', initSwiper);
 window.addEventListener('load', initSwiper);
+console.log('Ширина:', window.innerWidth, 'Swiper:', swiper);
