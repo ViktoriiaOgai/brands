@@ -127,11 +127,11 @@
 }
 .brands__listt {
   margin-top: 20px;
-  padding: 0 20px;
+  padding: 0 5px;
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 в ряд */
   grid-template-rows: repeat(2, auto);   /* 2 ряда */
-  gap: 16px;
+  gap: 8px;
 }
 .brands__title {
   margin-top: 20px;
@@ -167,7 +167,7 @@
   border: 2px solid #ddd;   
   border-radius: 12px;
   background-color: #fff;
-  width: 230px;              /* фиксированная ширина для всех карточек */
+  width: 240px;              /* фиксированная ширина для всех карточек */
   box-sizing: border-box;    /* чтобы padding и border не увеличивали ширину */
 }
 
@@ -178,6 +178,39 @@
   
 }
 .brands__listt .brand-cardt:nth-child(n+7) {
-    display: none !important;
+    display: none !important; /*скрывает лишние элементы*/
   }
+  .brands__listt .brand-cardt.show {
+  display: flex !important;
+}
+
+/* Кнопка и стрелка */
+.brands__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1b1c21;
+  background: none;
+  border: none;
+  margin-top: 16px;
+  padding: 0;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.button__icon {
+  width: 30px;
+  height: 30px;
+  fill: #41f6d7;
+  transition: transform 0.3s ease, fill 0.3s ease;
+}
+.brands__toggle.open .button__icon {
+  transform: rotate(180deg);
+    }
+  .brands__toggle:hover {
+  display: inline-flex;
+}
 }
