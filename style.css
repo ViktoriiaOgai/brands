@@ -18,7 +18,8 @@
 }
 
 @media (min-width: 320px) and (max-width: 767px){
- .brands__tab { display: none;}
+ .brands__tab,
+ .brands__tabl { display: none;}
 .brands {
   max-width: 320px;
   margin: 0 auto;
@@ -112,7 +113,8 @@
 }
 
 @media (min-width: 768px) and (max-width: 1119px) {
-  .brands {display: none;}
+  .brands,
+  .brands__tabl {display: none;}
   .brands__tab {
   max-width: 768px;
   margin: 0 auto;
@@ -217,6 +219,117 @@
   transform: rotate(180deg);
     }
   .brands__toggle:hover {
+  display: inline-flex;
+}
+}
+
+@media (min-width: 1120px) {
+  .brands,
+  .brands__tab {display: none;}
+  .brands__tabl {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: block;
+}
+.swiper-wrapper {
+    display: contents; /* отключаем слайдер, используем только сетку */
+    transform: none;
+  }
+.swiper-slide1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1120px; /* фиксированная ширина для 768px */
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+.brands__listtabl {
+  margin-top: 20px;
+  padding: 0 5px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 в ряд */
+  grid-template-rows: repeat(2, auto);   /* 2 ряда */
+  gap: 8px;
+}
+.brands__titletabl {
+  margin-top: 20px;
+  padding: 0 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #7a7a7a;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.brand-cardttabl button {
+  width: 32px;
+  height: 32px;
+  margin-left: 8px;
+  border: 1px solid #ff004d;
+  border-radius: 50%;
+  background: none;
+  color: #ff004d;
+  cursor: pointer;
+}
+
+.brand-cardttabl button:hover {
+  background: #ff3366;
+  color: #fff;
+}
+
+.brand-cardttabl {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: #fff;
+  width: 240px;          /* та же ширина, что и на мобилке */
+  height: 72px;
+  box-sizing: border-box;
+}
+.brand-cardttabl img {
+  max-height: 32px;
+  width: auto;
+  object-fit: contain;
+}
+.brands__listtabl .brand-cardttabl:nth-child(n+9) {
+    display: none; /*скрывает лишние элементы*/
+  }
+  .brands__listtabl .brand-cardttabl.show {
+  display: flex;
+  
+}
+
+/* Кнопка и стрелка */
+.brands__tabl__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1b1c21;
+  background: none;
+  border: none;
+  margin-top: 16px;
+  padding: 0;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.button__icon {
+  width: 30px;
+  height: 30px;
+  fill: #41f6d7;
+  transition: transform 0.3s ease, fill 0.3s ease;
+}
+.brands__tabl__toggle.open .button__icon {
+  transform: rotate(180deg);
+    }
+  .brands__table__toggle:hover {
   display: inline-flex;
 }
 }
