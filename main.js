@@ -23,23 +23,22 @@ document.addEventListener('DOMContentLoaded', () => {
   initSwiper();
   window.addEventListener('resize', initSwiper);
 
-  // --- Кнопка Показать все для планшета ---
-  const toggleTab = document.querySelector('.brands__toggle');
-  toggleTab.addEventListener('click', () => {
-    const hiddenCards = document.querySelectorAll('.brands__listt .brand-cardt:nth-child(n+7)');
-    hiddenCards.forEach(card => card.classList.toggle('show'));
-    toggleTab.classList.toggle('open');
-    const linkText = toggleTab.querySelector('.link-text');
-    linkText.textContent = toggleTab.classList.contains('open') ? 'Свернуть' : 'Показать все';
-  });
+  // --- Кнопка Показать все ---
+const toggleBtn = document.querySelector('.brands__toggle');
+const linkText = toggleBtn.querySelector('.link-text');
 
-  // --- Кнопка Показать все для десктопа ---
-  const toggleTabl = document.querySelector('.brands__tabl__toggle');
-  toggleTabl.addEventListener('click', () => {
-    const hiddenCards = document.querySelectorAll('.brands__listtabl .brand-cardttabl:nth-child(n+9)');
-    hiddenCards.forEach(card => card.classList.toggle('show'));
-    toggleTabl.classList.toggle('open');
-    const linkText = toggleTabl.querySelector('.link-text');
-    linkText.textContent = toggleTabl.classList.contains('open') ? 'Свернуть' : 'Показать все';
+toggleBtn.addEventListener('click', () => {
+  let hiddenCards;
+
+  if (window.innerWidth >= 1120) {
+    hiddenCards = document.querySelectorAll('.brands__list .brand-card:nth-child(n+9)');
+  } else {
+    // Планшет — показываем начиная с 7-й
+    hiddenCards = document.querySelectorAll('.brands__list .brand-card:nth-child(n+7)');
+  }
+
+  hiddenCards.forEach(card => card.classList.toggle('show'));
+  toggleBtn.classList.toggle('open');
+  linkText.textContent = toggleBtn.classList.contains('open') ? 'Свернуть' : 'Показать все';
   });
 });

@@ -13,19 +13,18 @@
   }
   body {
   font-family: Arial, sans-serif;
-  padding: 5px;
+  padding: 0;
   background: #f8f8f8;
 }
 
 @media (min-width: 320px) and (max-width: 767px){
- .brands__tab,
- .brands__tabl { display: none;}
-.brands {
+.brands__toggle {display: none;}
+  .brands {
   max-width: 320px;
   margin: 0 auto;
 }
 .brands__list {
-  display: flex;
+  display: flex !important;
   gap: 12px;
 }
 .brands__title {
@@ -39,13 +38,13 @@
 .swiper {
   width: 100%;
   height: 100%;
-  position: relative;
+  position: relative !important;
   padding-bottom: 24px; /* место для пагинации */
 }
 
 .swiper-slide {
   flex: 0 0 auto;      /* важно для slidesPerView: 1.2 */
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: space-between;
   width: 240px; /* фиксированная ширина для 320px */
@@ -71,7 +70,7 @@
 }
 
 .swiper-pagination {
-  position: absolute;
+  position: absolute !important;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -84,7 +83,7 @@
   height: 8px;
   border-radius: 50%;
   background: #9b9898;
-  display: inline-block;
+  display: inline-block !important;
   margin: 0 4px;
 }
 
@@ -113,19 +112,18 @@
 }
 
 @media (min-width: 768px) and (max-width: 1119px) {
-  .brands,
-  .brands__tabl {display: none;}
-  .brands__tab {
+  .swiper-pagination {display: none;}
+  .brands {
   max-width: 768px;
   margin: 0 auto;
   display: block;
 }
 .swiper-wrapper {
-    display: contents; /* отключаем слайдер, используем только сетку */
+    display: contents !important; /* отключаем слайдер, используем только сетку */
     transform: none;
   }
 .swiper-slide {
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: space-between;
   width: 768px; /* фиксированная ширина для 768px */
@@ -133,10 +131,10 @@
   border-radius: 12px;
   border: 1px solid #ddd;
 }
-.brands__listt {
+.brands__list {
   margin-top: 20px;
   padding: 0 5px;
-  display: grid;
+  display: grid !important;
   grid-template-columns: repeat(3, 1fr); /* 3 в ряд */
   grid-template-rows: repeat(2, auto);   /* 2 ряда */
   gap: 8px;
@@ -151,44 +149,53 @@
   text-transform: uppercase;
 }
 
-.brand-cardt button {
-  width: 32px;
-  height: 32px;
+.brand-card button { 
+  width: 30px;
+  height: 30px;
+  min-width: 30px;   
+  min-height: 30px;  
   margin-left: 8px;
+  display: flex;     
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  line-height: 1;
   border: 1px solid #ff004d;
   border-radius: 50%;
   background: none;
   color: #ff004d;
   cursor: pointer;
+  box-sizing: border-box; /* чтобы border не менял размер */
+  }
+  
+.brand-card button:hover { 
+  background: #ff3366; 
+  color: #fff; 
 }
 
-.brand-cardt button:hover {
-  background: #ff3366;
-  color: #fff;
-}
-
-.brand-cardt {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.brand-card {
+  display: flex !important;
+  align-items:center;
+  justify-content:space-between;
   padding: 12px 16px;
   border: 1px solid #ddd;
   border-radius: 12px;
   background-color: #fff;
-  width: 240px;          /* та же ширина, что и на мобилке */
+  width: auto;         
   height: 72px;
   box-sizing: border-box;
 }
-.brand-cardt img {
+.brand-card img {
+  padding: 0;
   max-height: 32px;
   width: auto;
   object-fit: contain;
 }
-.brands__listt .brand-cardt:nth-child(n+7) {
-    display: none; /*скрывает лишние элементы*/
+.brands__list .brand-card:nth-child(n+7) {
+    display: none !important; /*скрывает лишние элементы*/
   }
-  .brands__listt .brand-cardt.show {
-  display: flex;
+  .brands__list .brand-card.show {
+  display: flex !important;
   
 }
 
@@ -224,9 +231,8 @@
 }
 
 @media (min-width: 1120px) {
-  .brands,
-  .brands__tab {display: none;}
-  .brands__tabl {
+  .swiper-pagination {display: none;}
+  .brands {
   max-width: 1120px;
   margin: 0 auto;
   display: block;
@@ -235,24 +241,24 @@
     display: contents; /* отключаем слайдер, используем только сетку */
     transform: none;
   }
-.swiper-slide1 {
-  display: flex;
+.swiper-slide {
+  display: flex !important;
   align-items: center;
   justify-content: space-between;
-  width: 1120px; /* фиксированная ширина для 768px */
+  width: 1120px;
   background: #fff;
   border-radius: 12px;
   border: 1px solid #ddd;
 }
-.brands__listtabl {
+.brands__list {
   margin-top: 20px;
   padding: 0 5px;
-  display: grid;
+  display: grid !important;
   grid-template-columns: repeat(4, 1fr); /* 4 в ряд */
   grid-template-rows: repeat(2, auto);   /* 2 ряда */
   gap: 8px;
 }
-.brands__titletabl {
+.brands__title {
   margin-top: 20px;
   padding: 0 20px;
   font-size: 16px;
@@ -262,7 +268,7 @@
   text-transform: uppercase;
 }
 
-.brand-cardttabl button {
+.brand-card button {
   width: 32px;
   height: 32px;
   margin-left: 8px;
@@ -273,38 +279,38 @@
   cursor: pointer;
 }
 
-.brand-cardttabl button:hover {
+.brand-card button:hover {
   background: #ff3366;
   color: #fff;
 }
 
-.brand-cardttabl {
-  display: flex;
+.brand-card {
+  display: flex !important;
   align-items: center;
   justify-content: space-between;
   padding: 12px 16px;
   border: 1px solid #ddd;
   border-radius: 12px;
   background-color: #fff;
-  width: 240px;          /* та же ширина, что и на мобилке */
+  width: auto;          
   height: 72px;
   box-sizing: border-box;
 }
-.brand-cardttabl img {
+.brand-card img {
   max-height: 32px;
   width: auto;
   object-fit: contain;
 }
-.brands__listtabl .brand-cardttabl:nth-child(n+9) {
-    display: none; /*скрывает лишние элементы*/
+.brands__list .brand-card:nth-child(n+9) {
+    display: none !important; /*скрывает лишние элементы*/
   }
-  .brands__listtabl .brand-cardttabl.show {
-  display: flex;
+  .brands__list .brand-card.show {
+  display: flex !important;
   
 }
 
 /* Кнопка и стрелка */
-.brands__tabl__toggle {
+.brands__toggle {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -326,10 +332,10 @@
   fill: #41f6d7;
   transition: transform 0.3s ease, fill 0.3s ease;
 }
-.brands__tabl__toggle.open .button__icon {
+.brands__toggle.open .button__icon {
   transform: rotate(180deg);
     }
-  .brands__table__toggle:hover {
+  .brands__toggle:hover {
   display: inline-flex;
 }
 }
